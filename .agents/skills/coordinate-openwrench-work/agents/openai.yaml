@@ -1,0 +1,4 @@
+interface:
+  display_name: "Coordinate OpenWrench work"
+  short_description: "Recover evidence and prevent duplicate OpenWrench work"
+  default_prompt: "Use $coordinate-openwrench-work for the current OpenWrench task."

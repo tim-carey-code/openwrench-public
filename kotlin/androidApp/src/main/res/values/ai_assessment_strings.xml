@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="copy_ai_assessment">Copy assessment</string>
+    <string name="share_ai_assessment">Share as Markdown</string>
+    <string name="ai_assessment_copied">Assessment copied</string>
+    <string name="ai_assessment_share_failed">Could not share the assessment. You can still copy it.</string>
+</resources>

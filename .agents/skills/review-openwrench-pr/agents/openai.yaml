@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review OpenWrench PR"
+  short_description: "Find actionable defects in the exact OpenWrench diff"
+  default_prompt: "Use $review-openwrench-pr for the current OpenWrench task."

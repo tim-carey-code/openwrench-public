@@ -1,0 +1,582 @@
+{
+  "readings": [
+    {
+      "description": "Reports monitor status since dtc clear using standard Mode 01 PID 0x01.",
+      "name": "Monitor status since DTC clear",
+      "pid": 1,
+      "reason": null,
+      "status": "available",
+      "unit": null,
+      "value": {
+        "dtc_count": 5,
+        "ignition_type": "spark",
+        "mil_on": true,
+        "monitors": [
+          {
+            "available": true,
+            "complete": true,
+            "name": "comprehensive components"
+          },
+          {
+            "available": true,
+            "complete": true,
+            "name": "fuel system"
+          },
+          {
+            "available": true,
+            "complete": true,
+            "name": "misfire"
+          },
+          {
+            "available": true,
+            "complete": true,
+            "name": "catalyst"
+          },
+          {
+            "available": false,
+            "complete": null,
+            "name": "heated catalyst"
+          },
+          {
+            "available": false,
+            "complete": null,
+            "name": "evaporative system"
+          },
+          {
+            "available": false,
+            "complete": null,
+            "name": "secondary air"
+          },
+          {
+            "available": true,
+            "complete": false,
+            "name": "gasoline particulate filter"
+          },
+          {
+            "available": false,
+            "complete": null,
+            "name": "oxygen sensor"
+          },
+          {
+            "available": false,
+            "complete": null,
+            "name": "oxygen sensor heater"
+          },
+          {
+            "available": true,
+            "complete": true,
+            "name": "EGR/VVT system"
+          }
+        ]
+      },
+      "value_type": "structured"
+    },
+    {
+      "description": "Reports fuel system status using standard Mode 01 PID 0x03.",
+      "name": "Fuel system status",
+      "pid": 3,
+      "reason": null,
+      "status": "available",
+      "unit": null,
+      "value": {
+        "system_1": "open loop: insufficient engine temperature",
+        "system_2": "closed loop: oxygen-sensor feedback fault"
+      },
+      "value_type": "structured"
+    },
+    {
+      "description": "Reports calculated engine load using standard Mode 01 PID 0x04.",
+      "name": "Calculated engine load",
+      "pid": 4,
+      "reason": null,
+      "status": "available",
+      "unit": "%",
+      "value": 0.0,
+      "value_type": "number"
+    },
+    {
+      "description": "Reports engine coolant temperature using standard Mode 01 PID 0x05.",
+      "name": "Engine coolant temperature",
+      "pid": 5,
+      "reason": null,
+      "status": "available",
+      "unit": "°C",
+      "value": -40.0,
+      "value_type": "number"
+    },
+    {
+      "description": "Reports short-term fuel trim, bank 1 using standard Mode 01 PID 0x06.",
+      "name": "Short-term fuel trim, Bank 1",
+      "pid": 6,
+      "reason": null,
+      "status": "available",
+      "unit": "%",
+      "value": -100.0,
+      "value_type": "number"
+    },
+    {
+      "description": "Reports long-term fuel trim, bank 1 using standard Mode 01 PID 0x07.",
+      "name": "Long-term fuel trim, Bank 1",
+      "pid": 7,
+      "reason": null,
+      "status": "available",
+      "unit": "%",
+      "value": -100.0,
+      "value_type": "number"
+    },
+    {
+      "description": "Reports intake manifold absolute pressure using standard Mode 01 PID 0x0B.",
+      "name": "Intake manifold absolute pressure",
+      "pid": 11,
+      "reason": null,
+      "status": "available",
+      "unit": "kPa",
+      "value": 0.0,
+      "value_type": "number"
+    },
+    {
+      "description": "Reports engine speed using standard Mode 01 PID 0x0C.",
+      "name": "Engine speed",
+      "pid": 12,
+      "reason": null,
+      "status": "available",
+      "unit": "rpm",
+      "value": 0.0,
+      "value_type": "number"
+    },
+    {
+      "description": "Reports vehicle speed using standard Mode 01 PID 0x0D.",
+      "name": "Vehicle speed",
+      "pid": 13,
+      "reason": null,
+      "status": "available",
+      "unit": "km/h",
+      "value": 0.0,
+      "value_type": "number"
+    },
+    {
+      "description": "Reports timing advance using standard Mode 01 PID 0x0E.",
+      "name": "Timing advance",
+      "pid": 14,
+      "reason": null,
+      "status": "available",
+      "unit": "°",
+      "value": -64.0,
+      "value_type": "number"
+    },
+    {
+      "description": "Reports intake air temperature using standard Mode 01 PID 0x0F.",
+      "name": "Intake air temperature",
+      "pid": 15,
+      "reason": null,
+      "status": "available",
+      "unit": "°C",
+      "value": -40.0,
+      "value_type": "number"
+    },
+    {
+      "description": "Reports mass air flow using standard Mode 01 PID 0x10.",
+      "name": "Mass air flow",
+      "pid": 16,
+      "reason": null,
+      "status": "available",
+      "unit": "g/s",
+      "value": 0.0,
+      "value_type": "number"
+    },
+    {
+      "description": "Reports absolute throttle position using standard Mode 01 PID 0x11.",
+      "name": "Absolute throttle position",
+      "pid": 17,
+      "reason": null,
+      "status": "available",
+      "unit": "%",
+      "value": 0.0,
+      "value_type": "number"
+    },
+    {
+      "description": "Reports oxygen sensor presence using standard Mode 01 PID 0x13.",
+      "name": "Oxygen sensor presence",
+      "pid": 19,
+      "reason": null,
+      "status": "available",
+      "unit": null,
+      "value": {
+        "bank_1": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "bank_2": [
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      "value_type": "structured"
+    },
+    {
+      "description": "Reports narrow-range oxygen sensor 1 using standard Mode 01 PID 0x15.",
+      "name": "Narrow-range oxygen sensor 1",
+      "pid": 21,
+      "reason": null,
+      "status": "available",
+      "unit": null,
+      "value": {
+        "short_term_fuel_trim_percent": -100.0,
+        "voltage_volts": 0.0
+      },
+      "value_type": "structured"
+    },
+    {
+      "description": "Reports obd standard using standard Mode 01 PID 0x1C.",
+      "name": "OBD standard",
+      "pid": 28,
+      "reason": null,
+      "status": "available",
+      "unit": null,
+      "value": {
+        "code": 0,
+        "meaning": null,
+        "pid": 28
+      },
+      "value_type": "structured"
+    },
+    {
+      "description": "Reports engine runtime since start using standard Mode 01 PID 0x1F.",
+      "name": "Engine runtime since start",
+      "pid": 31,
+      "reason": null,
+      "status": "available",
+      "unit": "s",
+      "value": 0,
+      "value_type": "integer"
+    },
+    {
+      "description": "Reports distance traveled with mil on using standard Mode 01 PID 0x21.",
+      "name": "Distance traveled with MIL on",
+      "pid": 33,
+      "reason": null,
+      "status": "available",
+      "unit": "km",
+      "value": 0,
+      "value_type": "integer"
+    },
+    {
+      "description": "Reports fuel rail gauge pressure using standard Mode 01 PID 0x23.",
+      "name": "Fuel rail gauge pressure",
+      "pid": 35,
+      "reason": null,
+      "status": "available",
+      "unit": "kPa",
+      "value": 0.0,
+      "value_type": "number"
+    },
+    {
+      "description": "Reports wide-range oxygen sensor 1 using standard Mode 01 PID 0x24.",
+      "name": "Wide-range oxygen sensor 1",
+      "pid": 36,
+      "reason": null,
+      "status": "available",
+      "unit": null,
+      "value": {
+        "equivalence_ratio": 0.0,
+        "voltage_volts": 0.0
+      },
+      "value_type": "structured"
+    },
+    {
+      "description": "Reports commanded evaporative purge using standard Mode 01 PID 0x2E.",
+      "name": "Commanded evaporative purge",
+      "pid": 46,
+      "reason": null,
+      "status": "available",
+      "unit": "%",
+      "value": 0.0,
+      "value_type": "number"
+    },
+    {
+      "description": "Reports fuel tank level using standard Mode 01 PID 0x2F.",
+      "name": "Fuel tank level",
+      "pid": 47,
+      "reason": null,
+      "status": "available",
+      "unit": "%",
+      "value": 0.0,
+      "value_type": "number"
+    },
+    {
+      "description": "Reports warm-ups since dtcs cleared using standard Mode 01 PID 0x30.",
+      "name": "Warm-ups since DTCs cleared",
+      "pid": 48,
+      "reason": null,
+      "status": "available",
+      "unit": "count",
+      "value": 0,
+      "value_type": "integer"
+    },
+    {
+      "description": "Reports distance since dtcs cleared using standard Mode 01 PID 0x31.",
+      "name": "Distance since DTCs cleared",
+      "pid": 49,
+      "reason": null,
+      "status": "available",
+      "unit": "km",
+      "value": 0,
+      "value_type": "integer"
+    },
+    {
+      "description": "Reports evaporative system vapor pressure using standard Mode 01 PID 0x32.",
+      "name": "Evaporative system vapor pressure",
+      "pid": 50,
+      "reason": null,
+      "status": "available",
+      "unit": "Pa",
+      "value": 0.0,
+      "value_type": "number"
+    },
+    {
+      "description": "Reports barometric pressure using standard Mode 01 PID 0x33.",
+      "name": "Barometric pressure",
+      "pid": 51,
+      "reason": null,
+      "status": "available",
+      "unit": "kPa",
+      "value": 0.0,
+      "value_type": "number"
+    },
+    {
+      "description": "Reports catalyst temperature using standard Mode 01 PID 0x3C.",
+      "name": "Catalyst temperature",
+      "pid": 60,
+      "reason": null,
+      "status": "available",
+      "unit": "°C",
+      "value": -40.0,
+      "value_type": "number"
+    },
+    {
+      "description": "Reports monitor status this drive cycle using standard Mode 01 PID 0x41.",
+      "name": "Monitor status this drive cycle",
+      "pid": 65,
+      "reason": null,
+      "status": "available",
+      "unit": null,
+      "value": {
+        "dtc_count": 0,
+        "ignition_type": "compression",
+        "mil_on": false,
+        "monitors": [
+          {
+            "available": true,
+            "complete": true,
+            "name": "comprehensive components"
+          },
+          {
+            "available": true,
+            "complete": true,
+            "name": "fuel system"
+          },
+          {
+            "available": true,
+            "complete": true,
+            "name": "misfire"
+          },
+          {
+            "available": true,
+            "complete": true,
+            "name": "NMHC catalyst"
+          },
+          {
+            "available": true,
+            "complete": true,
+            "name": "NOx/SCR aftertreatment"
+          },
+          {
+            "available": true,
+            "complete": false,
+            "name": "boost pressure"
+          },
+          {
+            "available": false,
+            "complete": null,
+            "name": "exhaust gas sensor"
+          },
+          {
+            "available": false,
+            "complete": null,
+            "name": "particulate filter"
+          },
+          {
+            "available": false,
+            "complete": null,
+            "name": "EGR/VVT system"
+          }
+        ]
+      },
+      "value_type": "structured"
+    },
+    {
+      "description": "Reports control module voltage using standard Mode 01 PID 0x42.",
+      "name": "Control module voltage",
+      "pid": 66,
+      "reason": null,
+      "status": "available",
+      "unit": "V",
+      "value": 0.0,
+      "value_type": "number"
+    },
+    {
+      "description": "Reports absolute load using standard Mode 01 PID 0x43.",
+      "name": "Absolute load",
+      "pid": 67,
+      "reason": null,
+      "status": "available",
+      "unit": "%",
+      "value": 0.0,
+      "value_type": "number"
+    },
+    {
+      "description": "Reports commanded equivalence ratio using standard Mode 01 PID 0x44.",
+      "name": "Commanded equivalence ratio",
+      "pid": 68,
+      "reason": null,
+      "status": "available",
+      "unit": "ratio",
+      "value": 0.0,
+      "value_type": "number"
+    },
+    {
+      "description": "Reports absolute throttle position b using standard Mode 01 PID 0x47.",
+      "name": "Absolute throttle position B",
+      "pid": 71,
+      "reason": null,
+      "status": "available",
+      "unit": "%",
+      "value": 0.0,
+      "value_type": "number"
+    },
+    {
+      "description": "Reports accelerator pedal position d using standard Mode 01 PID 0x49.",
+      "name": "Accelerator pedal position D",
+      "pid": 73,
+      "reason": null,
+      "status": "available",
+      "unit": "%",
+      "value": 0.0,
+      "value_type": "number"
+    },
+    {
+      "description": "Reports accelerator pedal position e using standard Mode 01 PID 0x4A.",
+      "name": "Accelerator pedal position E",
+      "pid": 74,
+      "reason": null,
+      "status": "available",
+      "unit": "%",
+      "value": 0.0,
+      "value_type": "number"
+    },
+    {
+      "description": "Reports maximum sensor values using standard Mode 01 PID 0x4F.",
+      "name": "Maximum sensor values",
+      "pid": 79,
+      "reason": null,
+      "status": "available",
+      "unit": null,
+      "value": {
+        "equivalence_ratio": 0,
+        "intake_manifold_pressure_kilopascals": 0,
+        "oxygen_sensor_current_milliamps": 0,
+        "oxygen_sensor_voltage_volts": 0
+      },
+      "value_type": "structured"
+    },
+    {
+      "description": "Reports fuel type using standard Mode 01 PID 0x51.",
+      "name": "Fuel type",
+      "pid": 81,
+      "reason": null,
+      "status": "available",
+      "unit": null,
+      "value": {
+        "code": 0,
+        "meaning": "not available",
+        "pid": 81
+      },
+      "value_type": "structured"
+    },
+    {
+      "description": "Reports secondary oxygen sensor fuel trim, banks 1 and 3 using standard Mode 01 PID 0x55.",
+      "name": "Secondary oxygen sensor fuel trim, banks 1 and 3",
+      "pid": 85,
+      "reason": null,
+      "status": "available",
+      "unit": "%",
+      "value": {
+        "bank_1_percent": -100.0,
+        "bank_3_percent": -100.0
+      },
+      "value_type": "structured"
+    },
+    {
+      "description": "Reports secondary oxygen sensor fuel trim, banks 1 and 3 using standard Mode 01 PID 0x56.",
+      "name": "Secondary oxygen sensor fuel trim, banks 1 and 3",
+      "pid": 86,
+      "reason": null,
+      "status": "available",
+      "unit": "%",
+      "value": {
+        "bank_1_percent": -100.0,
+        "bank_3_percent": -100.0
+      },
+      "value_type": "structured"
+    },
+    {
+      "description": "Reports mass airflow sensors a and b using standard Mode 01 PID 0x66.",
+      "name": "Mass airflow sensors A and B",
+      "pid": 102,
+      "reason": null,
+      "status": "available",
+      "unit": null,
+      "value": {
+        "sensor_a_grams_per_second": 3.125,
+        "sensor_b_grams_per_second": 6.25
+      },
+      "value_type": "structured"
+    },
+    {
+      "description": "Reports engine coolant temperature sensors 1 and 2 using standard Mode 01 PID 0x67.",
+      "name": "Engine coolant temperature sensors 1 and 2",
+      "pid": 103,
+      "reason": null,
+      "status": "available",
+      "unit": "°C",
+      "value": {
+        "sensor_1_celsius": 171.0,
+        "sensor_2_celsius": 215.0
+      },
+      "value_type": "structured"
+    },
+    {
+      "description": "Reports intake air temperature sensors 1 and 2 using standard Mode 01 PID 0x68.",
+      "name": "Intake air temperature sensors 1 and 2",
+      "pid": 104,
+      "reason": null,
+      "status": "available",
+      "unit": "°C",
+      "value": {
+        "sensor_1_celsius": 171.0,
+        "sensor_2_celsius": 215.0
+      },
+      "value_type": "structured"
+    }
+  ],
+  "schema_version": "openwrench.snapshot/1",
+  "source": {
+    "adapter_id": "simulator",
+    "kind": "simulator",
+    "simulated": true
+  }
+}

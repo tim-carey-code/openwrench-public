@@ -1,0 +1,319 @@
+{
+  "schema": "openwrench.civic-replay/1",
+  "capture": {
+    "origin": "hardware",
+    "vehicle_label": "Honda Civic",
+    "captured_at_utc": "2026-01-01T00:00:00Z",
+    "clock_basis": "client_receipt",
+    "provenance": "SYNTHETIC (source-declared; not independently verified). Client receipt offsets are first client monotonic receipt, not backend completion. Polling interval and HTTP latency delay visibility; integer source age truncates below 1 ms. Cache changes entirely between polls cannot be recovered. No exact ECU or read time is claimed."
+  },
+  "duration_ms": 2000,
+  "signals": [
+    {
+      "id": "rpm",
+      "pid": "010C",
+      "label": "Engine speed",
+      "unit": "rpm",
+      "value_type": "number",
+      "support": "supported"
+    },
+    {
+      "id": "speed",
+      "pid": "010D",
+      "label": "Vehicle speed",
+      "unit": "km/h",
+      "value_type": "number",
+      "support": "supported"
+    },
+    {
+      "id": "load",
+      "pid": "0104",
+      "label": "Calculated engine load",
+      "unit": "%",
+      "value_type": "number",
+      "support": "supported"
+    },
+    {
+      "id": "throttle",
+      "pid": "0111",
+      "label": "Absolute throttle position",
+      "unit": "%",
+      "value_type": "number",
+      "support": "supported"
+    },
+    {
+      "id": "stft",
+      "pid": "0106",
+      "label": "Short-term fuel trim, Bank 1",
+      "unit": "%",
+      "value_type": "number",
+      "support": "supported"
+    },
+    {
+      "id": "ltft",
+      "pid": "0107",
+      "label": "Long-term fuel trim, Bank 1",
+      "unit": "%",
+      "value_type": "number",
+      "support": "supported"
+    },
+    {
+      "id": "map",
+      "pid": "010B",
+      "label": "Intake manifold absolute pressure",
+      "unit": "kPa",
+      "value_type": "number",
+      "support": "supported"
+    },
+    {
+      "id": "coolant",
+      "pid": "0105",
+      "label": "Engine coolant temperature",
+      "unit": "°C",
+      "value_type": "number",
+      "support": "supported"
+    },
+    {
+      "id": "intake-air",
+      "pid": "010F",
+      "label": "Intake air temperature",
+      "unit": "°C",
+      "value_type": "number",
+      "support": "supported"
+    },
+    {
+      "id": "maf",
+      "pid": "0110",
+      "label": "Mass air flow",
+      "unit": "g/s",
+      "value_type": "number",
+      "support": "supported"
+    },
+    {
+      "id": "runtime",
+      "pid": "011F",
+      "label": "Engine runtime since start",
+      "unit": "s",
+      "value_type": "integer",
+      "support": "supported"
+    }
+  ],
+  "observations": [
+    {
+      "at_ms": 100,
+      "signal": "rpm",
+      "availability": "available",
+      "value": 812.0,
+      "observed_at_utc": "2026-01-01T00:00:00Z",
+      "age_at_capture_ms": 100,
+      "reason": null
+    },
+    {
+      "at_ms": 100,
+      "signal": "speed",
+      "availability": "available",
+      "value": 0.0,
+      "observed_at_utc": "2026-01-01T00:00:00Z",
+      "age_at_capture_ms": 4999,
+      "reason": null
+    },
+    {
+      "at_ms": 100,
+      "signal": "load",
+      "availability": "available",
+      "value": 18.0,
+      "observed_at_utc": "2026-01-01T00:00:00Z",
+      "age_at_capture_ms": 100,
+      "reason": null
+    },
+    {
+      "at_ms": 100,
+      "signal": "throttle",
+      "availability": "available",
+      "value": 12.0,
+      "observed_at_utc": "2026-01-01T00:00:00Z",
+      "age_at_capture_ms": 100,
+      "reason": null
+    },
+    {
+      "at_ms": 100,
+      "signal": "stft",
+      "availability": "available",
+      "value": -1.5,
+      "observed_at_utc": "2026-01-01T00:00:00Z",
+      "age_at_capture_ms": 100,
+      "reason": null
+    },
+    {
+      "at_ms": 100,
+      "signal": "ltft",
+      "availability": "available",
+      "value": 2.3,
+      "observed_at_utc": "2026-01-01T00:00:00Z",
+      "age_at_capture_ms": 100,
+      "reason": null
+    },
+    {
+      "at_ms": 100,
+      "signal": "map",
+      "availability": "available",
+      "value": 34.0,
+      "observed_at_utc": "2026-01-01T00:00:00Z",
+      "age_at_capture_ms": 100,
+      "reason": null
+    },
+    {
+      "at_ms": 100,
+      "signal": "coolant",
+      "availability": "available",
+      "value": 88.0,
+      "observed_at_utc": "2026-01-01T00:00:00Z",
+      "age_at_capture_ms": 100,
+      "reason": null
+    },
+    {
+      "at_ms": 100,
+      "signal": "intake-air",
+      "availability": "available",
+      "value": 24.0,
+      "observed_at_utc": "2026-01-01T00:00:00Z",
+      "age_at_capture_ms": 100,
+      "reason": null
+    },
+    {
+      "at_ms": 100,
+      "signal": "maf",
+      "availability": "available",
+      "value": 3.8,
+      "observed_at_utc": "2026-01-01T00:00:00Z",
+      "age_at_capture_ms": 100,
+      "reason": null
+    },
+    {
+      "at_ms": 100,
+      "signal": "runtime",
+      "availability": "available",
+      "value": 120,
+      "observed_at_utc": "2026-01-01T00:00:00Z",
+      "age_at_capture_ms": 100,
+      "reason": null
+    },
+    {
+      "at_ms": 800,
+      "signal": "rpm",
+      "availability": "available",
+      "value": 824.0,
+      "observed_at_utc": "2026-01-01T00:00:01Z",
+      "age_at_capture_ms": 200,
+      "reason": null
+    },
+    {
+      "at_ms": 800,
+      "signal": "speed",
+      "availability": "available",
+      "value": 0.0,
+      "observed_at_utc": "2026-01-01T00:00:01Z",
+      "age_at_capture_ms": 5000,
+      "reason": null
+    },
+    {
+      "at_ms": 800,
+      "signal": "load",
+      "availability": "available",
+      "value": 19.0,
+      "observed_at_utc": "2026-01-01T00:00:01Z",
+      "age_at_capture_ms": 200,
+      "reason": null
+    },
+    {
+      "at_ms": 800,
+      "signal": "throttle",
+      "availability": "available",
+      "value": 12.0,
+      "observed_at_utc": "2026-01-01T00:00:01Z",
+      "age_at_capture_ms": 200,
+      "reason": null
+    },
+    {
+      "at_ms": 800,
+      "signal": "stft",
+      "availability": "available",
+      "value": -1.0,
+      "observed_at_utc": "2026-01-01T00:00:01Z",
+      "age_at_capture_ms": 200,
+      "reason": null
+    },
+    {
+      "at_ms": 800,
+      "signal": "ltft",
+      "availability": "available",
+      "value": 2.3,
+      "observed_at_utc": "2026-01-01T00:00:01Z",
+      "age_at_capture_ms": 200,
+      "reason": null
+    },
+    {
+      "at_ms": 800,
+      "signal": "map",
+      "availability": "available",
+      "value": 35.0,
+      "observed_at_utc": "2026-01-01T00:00:01Z",
+      "age_at_capture_ms": 200,
+      "reason": null
+    },
+    {
+      "at_ms": 800,
+      "signal": "coolant",
+      "availability": "available",
+      "value": 88.0,
+      "observed_at_utc": "2026-01-01T00:00:01Z",
+      "age_at_capture_ms": 200,
+      "reason": null
+    },
+    {
+      "at_ms": 800,
+      "signal": "intake-air",
+      "availability": "available",
+      "value": 24.0,
+      "observed_at_utc": "2026-01-01T00:00:01Z",
+      "age_at_capture_ms": 200,
+      "reason": null
+    },
+    {
+      "at_ms": 800,
+      "signal": "maf",
+      "availability": "available",
+      "value": 4.0,
+      "observed_at_utc": "2026-01-01T00:00:01Z",
+      "age_at_capture_ms": 200,
+      "reason": null
+    },
+    {
+      "at_ms": 800,
+      "signal": "runtime",
+      "availability": "available",
+      "value": 120,
+      "observed_at_utc": "2026-01-01T00:00:01Z",
+      "age_at_capture_ms": 200,
+      "reason": null
+    },
+    {
+      "at_ms": 1100,
+      "signal": "rpm",
+      "availability": "unavailable",
+      "value": null,
+      "observed_at_utc": null,
+      "age_at_capture_ms": null,
+      "reason": "ECU returned NO DATA"
+    },
+    {
+      "at_ms": 1400,
+      "signal": "rpm",
+      "availability": "available",
+      "value": 824.0,
+      "observed_at_utc": "2026-01-01T00:00:02Z",
+      "age_at_capture_ms": 200,
+      "reason": null
+    }
+  ]
+}

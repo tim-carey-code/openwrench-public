@@ -1,0 +1,16 @@
+{
+  "provenance": "Invented values in documented ELM327/ISO-TP frame shapes; no vehicle capture",
+  "requested_pids": [4, 5, 11, 12],
+  "grouped_command": "0104050B0C",
+  "grouped_frames": [
+    "7E8 10 0A 41 04 80 05 50 0B",
+    "7E9 04 41 0C 0F A0 00 00 00",
+    "7E8 21 60 0C 20 00 00 00 00"
+  ],
+  "single_exchanges": [
+    ["0104", ["7E8 03 41 04 80 00 00 00 00"]],
+    ["0105", ["7E8 03 41 05 50 00 00 00 00"]],
+    ["010B", ["7E8 03 41 0B 60 00 00 00 00"]],
+    ["010C", ["7E8 04 41 0C 20 00 00 00 00"]]
+  ]
+}

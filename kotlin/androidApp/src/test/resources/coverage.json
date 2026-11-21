@@ -1,0 +1,467 @@
+{
+  "schema": "openwrench.synthetic-coverage/1",
+  "vehicle_capabilities": "UNVERIFIED",
+  "synthetic": true,
+  "scalar_channels": 55,
+  "structured_omitted": [
+    "0101",
+    "0103",
+    "0113",
+    "0115",
+    "011C",
+    "0124",
+    "0141",
+    "014F",
+    "0151",
+    "0155",
+    "0156",
+    "0166",
+    "0167",
+    "0168"
+  ],
+  "channels": [
+    {
+      "pid": "0104",
+      "name": "Calculated engine load",
+      "unit": "%",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "0105",
+      "name": "Engine coolant temperature",
+      "unit": "°C",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "0106",
+      "name": "Short-term fuel trim, Bank 1",
+      "unit": "%",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "0107",
+      "name": "Long-term fuel trim, Bank 1",
+      "unit": "%",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "0108",
+      "name": "Short-term fuel trim, Bank 2",
+      "unit": "%",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "0109",
+      "name": "Long-term fuel trim, Bank 2",
+      "unit": "%",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "010A",
+      "name": "Fuel pressure",
+      "unit": "kPa",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "010B",
+      "name": "Intake manifold absolute pressure",
+      "unit": "kPa",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "010C",
+      "name": "Engine speed",
+      "unit": "rpm",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "010D",
+      "name": "Vehicle speed",
+      "unit": "km/h",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "010E",
+      "name": "Timing advance",
+      "unit": "°",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "010F",
+      "name": "Intake air temperature",
+      "unit": "°C",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "0110",
+      "name": "Mass air flow",
+      "unit": "g/s",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "0111",
+      "name": "Absolute throttle position",
+      "unit": "%",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "011F",
+      "name": "Engine runtime since start",
+      "unit": "s",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "0121",
+      "name": "Distance traveled with MIL on",
+      "unit": "km",
+      "coverage": "unavailable: history unverified",
+      "numeric_receipts": 0,
+      "null_receipts": 301
+    },
+    {
+      "pid": "0122",
+      "name": "Fuel rail pressure relative to manifold vacuum",
+      "unit": "kPa",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "0123",
+      "name": "Fuel rail gauge pressure",
+      "unit": "kPa",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "012E",
+      "name": "Commanded evaporative purge",
+      "unit": "%",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "012F",
+      "name": "Fuel tank level",
+      "unit": "%",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "0130",
+      "name": "Warm-ups since DTCs cleared",
+      "unit": "count",
+      "coverage": "unavailable: history unverified",
+      "numeric_receipts": 0,
+      "null_receipts": 301
+    },
+    {
+      "pid": "0131",
+      "name": "Distance since DTCs cleared",
+      "unit": "km",
+      "coverage": "unavailable: history unverified",
+      "numeric_receipts": 0,
+      "null_receipts": 301
+    },
+    {
+      "pid": "0132",
+      "name": "Evaporative system vapor pressure",
+      "unit": "Pa",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "0133",
+      "name": "Barometric pressure",
+      "unit": "kPa",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "013C",
+      "name": "Catalyst temperature",
+      "unit": "°C",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "0142",
+      "name": "Control module voltage",
+      "unit": "V",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "0143",
+      "name": "Absolute load",
+      "unit": "%",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "0144",
+      "name": "Commanded equivalence ratio",
+      "unit": "ratio",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "0145",
+      "name": "Relative throttle position",
+      "unit": "%",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "0146",
+      "name": "Ambient air temperature",
+      "unit": "°C",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "0147",
+      "name": "Absolute throttle position B",
+      "unit": "%",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "0148",
+      "name": "Absolute throttle position C",
+      "unit": "%",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "0149",
+      "name": "Accelerator pedal position D",
+      "unit": "%",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "014A",
+      "name": "Accelerator pedal position E",
+      "unit": "%",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "014B",
+      "name": "Accelerator pedal position F",
+      "unit": "%",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "014C",
+      "name": "Commanded throttle actuator",
+      "unit": "%",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "014D",
+      "name": "Time run with MIL on",
+      "unit": "min",
+      "coverage": "unavailable: history unverified",
+      "numeric_receipts": 0,
+      "null_receipts": 301
+    },
+    {
+      "pid": "014E",
+      "name": "Time since DTCs cleared",
+      "unit": "min",
+      "coverage": "unavailable: history unverified",
+      "numeric_receipts": 0,
+      "null_receipts": 301
+    },
+    {
+      "pid": "0150",
+      "name": "Maximum mass-airflow rate",
+      "unit": "g/s",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "0152",
+      "name": "Ethanol fuel percentage",
+      "unit": "%",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "0153",
+      "name": "Absolute evaporative-system vapor pressure",
+      "unit": "kPa",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "0159",
+      "name": "Fuel rail absolute pressure",
+      "unit": "kPa",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "015A",
+      "name": "Relative accelerator pedal position",
+      "unit": "%",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "015B",
+      "name": "Hybrid battery remaining life",
+      "unit": "%",
+      "coverage": "unavailable: scenario not applicable",
+      "numeric_receipts": 0,
+      "null_receipts": 301
+    },
+    {
+      "pid": "015C",
+      "name": "Engine oil temperature",
+      "unit": "°C",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "015D",
+      "name": "Fuel injection timing",
+      "unit": "°",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "015E",
+      "name": "Engine fuel rate",
+      "unit": "L/h",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "0161",
+      "name": "Driver-demanded engine torque",
+      "unit": "%",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "0162",
+      "name": "Actual engine torque",
+      "unit": "%",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "0163",
+      "name": "Engine reference torque",
+      "unit": "N·m",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "018D",
+      "name": "Throttle position G",
+      "unit": "%",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "018E",
+      "name": "Engine friction torque",
+      "unit": "%",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "01A4",
+      "name": "Transmission actual gear ratio",
+      "unit": "ratio",
+      "coverage": "fictional numeric receipts; ECU capability unverified",
+      "numeric_receipts": 299,
+      "null_receipts": 2
+    },
+    {
+      "pid": "01A5",
+      "name": "Commanded diesel exhaust-fluid dosing",
+      "unit": "%",
+      "coverage": "unavailable: scenario not applicable",
+      "numeric_receipts": 0,
+      "null_receipts": 301
+    },
+    {
+      "pid": "01A6",
+      "name": "Odometer",
+      "unit": "km",
+      "coverage": "unavailable: history unverified",
+      "numeric_receipts": 0,
+      "null_receipts": 301
+    }
+  ],
+  "seed_sha256": "e70a3e8ce7ea023943a76f429b341070ae040303abe5eba1d3f10e519be2f9a9",
+  "drive_sha256": "6cdbe18be974af4b2ab4a5f7f966575e2200628ea04651ee987238a97da3dc6b",
+  "drive_bytes": 392518
+}

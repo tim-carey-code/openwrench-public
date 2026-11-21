@@ -1,0 +1,120 @@
+{
+  "schema_version": "openwrench.snapshot/1",
+  "source": {
+    "adapter_id": "simulator",
+    "kind": "simulator",
+    "simulated": true
+  },
+  "readings": [
+    {
+      "pid": 4,
+      "name": "Calculated engine load",
+      "description": "Reports calculated engine load using standard Mode 01 PID 0x04.",
+      "status": "available",
+      "value": 40.0,
+      "value_type": "number",
+      "unit": "%",
+      "reason": null
+    },
+    {
+      "pid": 5,
+      "name": "Engine coolant temperature",
+      "description": "Reports engine coolant temperature using standard Mode 01 PID 0x05.",
+      "status": "available",
+      "value": 91.0,
+      "value_type": "number",
+      "unit": "°C",
+      "reason": null
+    },
+    {
+      "pid": 6,
+      "name": "Short-term fuel trim, Bank 1",
+      "description": "Reports short-term fuel trim, bank 1 using standard Mode 01 PID 0x06.",
+      "status": "available",
+      "value": -2.34375,
+      "value_type": "number",
+      "unit": "%",
+      "reason": null
+    },
+    {
+      "pid": 7,
+      "name": "Long-term fuel trim, Bank 1",
+      "description": "Reports long-term fuel trim, bank 1 using standard Mode 01 PID 0x07.",
+      "status": "available",
+      "value": 3.125,
+      "value_type": "number",
+      "unit": "%",
+      "reason": null
+    },
+    {
+      "pid": 11,
+      "name": "Intake manifold absolute pressure",
+      "description": "Reports intake manifold absolute pressure using standard Mode 01 PID 0x0B.",
+      "status": "available",
+      "value": 72.0,
+      "value_type": "number",
+      "unit": "kPa",
+      "reason": null
+    },
+    {
+      "pid": 12,
+      "name": "Engine speed",
+      "description": "Reports engine speed using standard Mode 01 PID 0x0C.",
+      "status": "available",
+      "value": 1726.0,
+      "value_type": "number",
+      "unit": "rpm",
+      "reason": null
+    },
+    {
+      "pid": 13,
+      "name": "Vehicle speed",
+      "description": "Reports vehicle speed using standard Mode 01 PID 0x0D.",
+      "status": "available",
+      "value": 42.0,
+      "value_type": "number",
+      "unit": "km/h",
+      "reason": null
+    },
+    {
+      "pid": 15,
+      "name": "Intake air temperature",
+      "description": "Reports intake air temperature using standard Mode 01 PID 0x0F.",
+      "status": "available",
+      "value": 27.0,
+      "value_type": "number",
+      "unit": "°C",
+      "reason": null
+    },
+    {
+      "pid": 16,
+      "name": "Mass air flow",
+      "description": "Reports mass air flow using standard Mode 01 PID 0x10.",
+      "status": "available",
+      "value": 12.34,
+      "value_type": "number",
+      "unit": "g/s",
+      "reason": null
+    },
+    {
+      "pid": 17,
+      "name": "Absolute throttle position",
+      "description": "Reports absolute throttle position using standard Mode 01 PID 0x11.",
+      "status": "available",
+      "value": 20.0,
+      "value_type": "number",
+      "unit": "%",
+      "reason": null
+    },
+    {
+      "pid": 31,
+      "name": "Engine runtime since start",
+      "description": "Reports engine runtime since start using standard Mode 01 PID 0x1F.",
+      "status": "available",
+      "value": 842,
+      "value_type": "integer",
+      "unit": "s",
+      "reason": null
+    }
+  ]
+}

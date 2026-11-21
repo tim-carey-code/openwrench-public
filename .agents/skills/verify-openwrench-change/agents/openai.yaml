@@ -1,0 +1,4 @@
+interface:
+  display_name: "Verify OpenWrench change"
+  short_description: "Independently test acceptance and regression evidence"
+  default_prompt: "Use $verify-openwrench-change for the current OpenWrench task."

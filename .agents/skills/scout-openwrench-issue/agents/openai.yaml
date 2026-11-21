@@ -1,0 +1,4 @@
+interface:
+  display_name: "Scout OpenWrench issue"
+  short_description: "Investigate and report issues without changing code"
+  default_prompt: "Use $scout-openwrench-issue to investigate this assigned issue, report evidence and a proposed fix, and stop for a human decision."

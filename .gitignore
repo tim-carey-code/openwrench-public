@@ -1,0 +1,10 @@
+build/
+dist/
+.idea/
+.vscode/
+.DS_Store
+
+# Kotlin/Gradle local state (wrapper remains tracked)
+.gradle/
+.kotlin/
+local.properties
