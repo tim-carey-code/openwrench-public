@@ -191,11 +191,19 @@ class DiagnosticSessionStore(
         } catch (failure: Exception) { csvStates.remove(id); throw failure }
     }
 
-    /** Includes linked frozen reports and chart traces; missing older drive evidence stays explicit. */
-    @Synchronized fun exportZip(id: String, output: OutputStream) {
-        // Revalidate every exported row even if an external edit preserved length/mtime.
+    /** Revalidate durable receipts even if external edits preserved length and mtime. */
+    @Synchronized internal fun readForSharing(id: String, expected: DiagnosisRecord?): DiagnosisRecord {
         csvStates.remove(id)
-        val record = read(id)
+        val saved = read(id)
+        check(expected == null || saved == expected) {
+            "This diagnosis has unsaved changes. Retry saving or reopen its saved evidence before exporting."
+        }
+        return saved
+    }
+
+    /** Includes linked frozen reports and chart traces; missing older drive evidence stays explicit. */
+    @Synchronized fun exportZip(id: String, output: OutputStream, expected: DiagnosisRecord? = null) {
+        val record = readForSharing(id, expected)
         val driveIds = record.segments.mapNotNull { it.driveId }.distinct()
         val missing = mutableListOf<String>()
         val aiDrives = mutableListOf<kotlinx.serialization.json.JsonObject>()

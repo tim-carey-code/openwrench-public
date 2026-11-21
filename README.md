@@ -26,6 +26,13 @@ account. This is a sanitized public source snapshot; it is not an app release.
 
 ## Recent changes
 
+The public test preview adds a structured next-check summary based on saved OBD
+evidence, with missing or incomplete evidence kept visible. The review APK
+installs separately as **OpenWrench Public Test** and does not replace an
+existing OpenWrench install. Hosted analysis remains disabled; use manual export
+to inspect the evidence packet.
+
+
 - **Guided diagnosis:** Review warning context, readiness, and recorded evidence
   with coverage gaps and suggestions for what to check next. These are not
   confirmed diagnoses. See [diagnostic investigations](docs/diagnostic-investigations.md).

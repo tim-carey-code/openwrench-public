@@ -29,7 +29,19 @@ test('Android receives only a completed assessment from the fixed provider', asy
   const upstream = finish => async (url, options) => {
     assert.equal(url, 'https://api.deepseek.com/chat/completions');
     assert.equal(options.headers.Authorization, 'Bearer fictional-provider-key');
-    assert.equal(JSON.parse(options.body).messages[1].content, 'synthetic report');
+    const [instructions, evidence] = JSON.parse(options.body).messages;
+    assert.equal(instructions.role, 'system');
+    const headings = instructions.content.split('\n').filter(line => line.endsWith('?'));
+    assert.deepEqual(headings, [
+      "What's happening with my vehicle right now?",
+      'Is anything concerning?',
+      'What should I check next?',
+    ]);
+    const nextStep = instructions.content.split('What should I check next?\n')[1];
+    assert.match(nextStep, /fictional demo with no separate real-world complaint/);
+    assert.match(nextStep, /No vehicle check is indicated from this fictional recording/);
+    assert.match(nextStep, /choose at most one low-risk check or missing observation/);
+    assert.deepEqual(evidence, { role: 'user', content: 'synthetic report' });
     return Response.json({ choices: [{ finish_reason: finish,
       message: { content: 'Sample assessment', reasoning_content: 'Not returned' } }] });
   };

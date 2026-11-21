@@ -16,10 +16,8 @@ import android.widget.TextView
 import androidx.activity.ComponentActivity
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
-import java.io.File
 import java.net.URI
 import java.security.MessageDigest
-import java.util.zip.ZipFile
 import javax.net.ssl.HttpsURLConnection
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
@@ -32,34 +30,12 @@ import kotlinx.serialization.json.*
 import org.commonmark.parser.Parser
 import org.commonmark.renderer.html.HtmlRenderer
 
-// The public snapshot is not connected to a hosted relay.
 private const val RELAY_URL = ""
-private const val MAX_REQUEST_BYTES = 512 * 1024
 
 internal val diagnosisAiRequests = DiagnosisAiRequests(CoroutineScope(SupervisorJob() + Dispatchers.Main.immediate))
 
 internal fun ComponentActivity.showDiagnosisAiDialog(diagnosis: DiagnosisCoordinator, id: String) {
-    showEvidenceAiDialog(id) {
-        val archive = File.createTempFile("ai-evidence-", ".zip", cacheDir)
-        try {
-            archive.outputStream().use { diagnosis.export(id, it) }
-            ZipFile(archive).use { zip ->
-                zip.getInputStream(checkNotNull(zip.getEntry("report.txt"))).use { input ->
-                    val buffer = ByteArray(MAX_REQUEST_BYTES)
-                    var count = 0
-                    while (count < buffer.size) {
-                        val read = input.read(buffer, count, buffer.size - count)
-                        if (read == -1) break
-                        count += read
-                    }
-                    require(count < buffer.size)
-                    String(buffer, 0, count, Charsets.UTF_8)
-                }
-            }
-        } finally {
-            archive.delete()
-        }
-    }
+    showEvidenceAiDialog(id) { diagnosis.aiReport(id) }
 }
 
 internal fun ComponentActivity.showImportedDriveAiDialog(drive: SavedDrive) {
@@ -76,12 +52,6 @@ internal fun ComponentActivity.showImportedDriveAiDialog(drive: SavedDrive) {
         }
     }
 }
-
-internal fun importedDriveAiReport(drive: SavedDrive): String =
-    "Imported drive · historical evidence\n" +
-        "Drive: ${drive.id}\nRecorded origin: ${drive.origin.name} (as stored in the archive)\n" +
-        "Only this drive's report is included. The original archive, separate scans, and full readings are not included.\n\n" +
-        drive.copyText()
 
 private fun ComponentActivity.showEvidenceAiDialog(
     id: String,
@@ -124,10 +94,8 @@ private fun ComponentActivity.showEvidenceAiDialog(
             val driverNote = symptom.text.toString().trim()
             lifecycleScope.launch {
                 try {
-                    val report = withContext(Dispatchers.IO) { readReport() }
-                    val evidence = "Driver report: ${driverNote.ifBlank { "Not supplied" }}\n\nSaved report:\n$report"
-                    val body = buildJsonObject { put("evidence", evidence) }.toString().toByteArray()
-                    require(body.size <= MAX_REQUEST_BYTES)
+                    val report = readReport()
+                    val evidence = DiagnosticAiEvidence(driverNote, report)
                     val provider = try {
                         withContext(Dispatchers.IO) { readProvider() }
                     } catch (cancelled: CancellationException) {
@@ -138,11 +106,11 @@ private fun ComponentActivity.showEvidenceAiDialog(
                     }
                     AlertDialog.Builder(this@showEvidenceAiDialog)
                         .setTitle("Send to ${provider.name}?")
-                        .setMessage(formatEvidencePreview(evidence))
+                        .setMessage(formatEvidencePreview(evidence.text))
                         .setNegativeButton("Cancel", null)
                         .setPositiveButton("Send") { _, _ ->
                             if (diagnosisAiRequests.submit(id, previewRevision) {
-                                    withContext(Dispatchers.IO) { requestAssessment(body, provider.revision) }
+                                    withContext(Dispatchers.IO) { requestAssessment(evidence.body, provider.revision) }
                                 } || diagnosisAiRequests.pending.value == id
                             ) {
                                 showPendingAnalysis(id)

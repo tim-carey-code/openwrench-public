@@ -271,6 +271,11 @@ class DiagnosisCoordinatorTest {
             ZipInputStream(output.toByteArray().inputStream()).use { zip ->
                 while (true) { val entry = zip.nextEntry ?: break; entries[entry.name] = zip.readBytes().toString(Charsets.UTF_8) }
             }
+            val aiReport = h.diagnosis.aiReport(record.id)
+            assertContains(aiReport, record.reportText())
+            assertContains(aiReport, savedDrive.copyText())
+            assertContains(aiReport, "Recorded origin: HARDWARE")
+            assertFalse(DiagnosticSessionStore.CSV_HEADER in aiReport)
             val csv = entries.getValue("readings.csv")
             assertTrue(csv.contains("NO_DATA"))
             assertEquals(record.segments.sumOf { it.sampleCount }.toInt(), csv.lines().filter { it.isNotBlank() }.size - 1)

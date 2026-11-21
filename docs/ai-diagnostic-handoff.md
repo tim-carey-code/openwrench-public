@@ -5,8 +5,9 @@ The diagnosis ZIP now includes `ai-request.md` and `ai-evidence.json` for a
 deliberate manual handoff to a cloud model chosen by the user. There is no
 automatic upload or execution of model output. Recording and local analysis
 remain usable offline. The optional **Analyze with AI** action previews a saved
-report and symptom note, and sends them only after confirmation using the
-[separately hosted DeepSeek relay](../tools/diagnostic-ai-relay/README.md).
+report, selected recorded evidence and the driver's symptom note. It sends the
+previewed evidence only after confirmation, through the [optional AI relay](../tools/diagnostic-ai-relay/README.md)
+to the provider identified in the preview.
 Manual ZIP export still includes the fuller evidence packet.
 
 Use **Copy assessment** or **Share as Markdown** in the AI result dialog to
@@ -89,6 +90,33 @@ Existing streaming and changed-source rejection stay intact; the index holds
 only small references, never a second copy of all telemetry. The two additions
 are generated on export and do not rewrite installed history. No device signing,
 installation, adapter or vehicle qualification is implied.
+
+## What a better in-app answer looks like
+
+Read the answer against the recording, not against how plausible a diagnosis sounds.
+For a side-by-side check, give the same provider the previous report-only input
+and the new preview for each fictional recording, using the same driver note.
+Evaluate the three answers: what happened **during this recording**, what warrants
+attention (separate urgency from certainty about a cause), and one check whose
+result would change the interpretation. Verify cited facts against the original.
+A more specific answer is only better if the additional evidence supports it.
+
+- **Stored P0171, qualified warm idle and cruise:** If bank 1 repeatedly needed
+  more positive fuel correction at idle than at cruise, cite the bank, recorded
+  windows and values. A parked visual check for a loose intake/vacuum hose can
+  distinguish an obvious leak; finding none doesn't rule out a leak. Neither
+  the code nor the pattern proves that a sensor or hose has failed.
+- **Same code, cold or too short:** Report the code, but not the idle/cruise
+  inference. The useful next observation is fuel correction once warm and in
+  closed loop under the missing conditions, not a parts inspection based on
+  the code alone.
+- **Driver explicitly reports no symptom:** Use this drive as a baseline; do
+  not infer the symptom occurred, declare a repair, or erase an independently
+  observed concern. A blank note does not establish a symptom-free drive.
+- **Interrupted capture:** Preserve evidence recorded before the gap. Name the
+  missing interval, don't join samples across it, and don't claim to know what
+  the car did after recording stopped. If the gap obscured the complaint, the
+  next useful check is a comparable complete recording, when safe.
 
 ## Acceptance
 

@@ -395,16 +395,19 @@ class DiagnosisCoordinator(
     suspend fun readDriveEvidence(id: String, driveId: String): DiagnosisDriveEvidence =
         disk.withLock { withContext(io) { store.readDriveEvidence(id, driveId) } }
 
-    suspend fun export(id: String, output: OutputStream) {
+    internal suspend fun aiReport(id: String): String = withSavedEvidence(id) { current ->
+        diagnosisAiReport(store.readForSharing(id, current)) { driveId -> store.readDriveEvidence(id, driveId) }
+    }
+
+    suspend fun export(id: String, output: OutputStream) = withSavedEvidence(id) { current ->
+        store.exportZip(id, output, current)
+    }
+
+    private suspend fun <T> withSavedEvidence(id: String, action: (DiagnosisRecord?) -> T): T {
         check(!state.value.busy && recordingSegment == null) { "Pause or finish diagnosis before exporting." }
         check(pending.isEmpty()) { "Some receipts are not saved. Retry saving before exporting." }
-        disk.withLock { withContext(io) {
-            val saved = store.read(id)
-            val current = state.value.current?.takeIf { it.id == id }
-            check(current == null || saved == current) {
-                "This diagnosis has unsaved changes. Retry saving or reopen its saved evidence before exporting."
-            }
-            store.exportZip(id, output)
+        return disk.withLock { withContext(io) {
+            action(state.value.current?.takeIf { it.id == id })
         } }
     }
 }
