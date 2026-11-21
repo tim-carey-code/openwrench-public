@@ -3,8 +3,10 @@
 Deploy this optional relay to Cloudflare Workers. Recording, local diagnosis,
 and manual ZIP export still work without it. In Diagnosis History, open a saved
 diagnosis and choose **Analyze with AI**. The app already knows the HTTPS URL.
-There is no sign-in, device approval, or token. Review the saved report and
-symptom note before sending; raw readings and drive archives are not sent.
+There is no sign-in, device approval, or token. Review the saved report, selected recorded evidence and symptom note before
+sending. Full readings files and drive archives are not sent. The assessment
+answers what happened during the recording, what warrants attention, and what
+single check would be most useful next. See the [four comparison cases](../../docs/ai-diagnostic-handoff.md#what-a-better-in-app-answer-looks-like).
 
 From this directory, use Wrangler to deploy to the Workers Free plan:
 

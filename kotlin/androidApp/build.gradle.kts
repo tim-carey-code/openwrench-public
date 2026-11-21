@@ -19,6 +19,7 @@ android {
     compileSdk = 35
     defaultConfig {
         applicationId = "org.openwrench.android"
+        manifestPlaceholders["appLabel"] = "OpenWrench"
         minSdk = 24
         targetSdk = 35
         versionCode = 7
@@ -26,6 +27,13 @@ android {
     }
     buildFeatures { compose = true }
     buildTypes {
+        create("publicTest") {
+            initWith(getByName("debug"))
+            applicationIdSuffix = ".publictest"
+            versionNameSuffix = "-public-test"
+            matchingFallbacks += "debug"
+            manifestPlaceholders["appLabel"] = "OpenWrench Public Test"
+        }
         // Separate sandbox for UI review when the installed app's signing key is unavailable.
         // This cannot replace the regular app or read its private history.
         // Distinct side-by-side app; never replaces Telemetry Preview or shares its history.

@@ -6,24 +6,33 @@ import org.openwrench.nativecore.*
 import java.util.UUID
 import kotlin.test.*
 
-class GuidedDiagnosisArchiveTest {
-    private fun proof(): GuidedDiagnosisProgress {
-        val inputs = setOf(3, 4, 5, 6, 7, 12, 13)
-        val recorder = GuidedDiagnosisRecorder(0, inputs, inputs, true)
-        repeat(11) { index ->
-            val at = 100 + index * 3_000L
-            for ((n, entry) in listOf(5 to 72.0, 12 to 1500.0, 13 to 40.0, 4 to 30.0).withIndex())
-                recorder.offer(NativeReading(entry.first, DecodedReading.Scalar(entry.second)), at + n)
-            recorder.offer(NativeReading(3, DecodedReading.Structured(mapOf("system_1" to FuelCorrectionRecorder.CLOSED,
-                "system_2" to "engine off"))), at + 4)
-            recorder.offer(NativeReading(6, DecodedReading.Scalar(5.0)), at + 5)
-            recorder.offer(NativeReading(7, DecodedReading.Scalar(15.0)), at + 6)
-        }
-        return recorder.snapshot()
+internal fun syntheticGuidedProgress(coolantCelsius: Double = 72.0): GuidedDiagnosisProgress {
+    val inputs = setOf(3, 4, 5, 6, 7, 12, 13)
+    val recorder = GuidedDiagnosisRecorder(0, inputs, inputs, true)
+    syntheticFuelWindow(coolantCelsius, offer = recorder::offer)
+    return recorder.snapshot()
+}
+
+internal fun syntheticFuelWindow(
+    coolantCelsius: Double, start: Long = 100, rpm: Double = 1500.0, speed: Double = 40.0,
+    load: Double = 30.0, shortTrim: Double = 5.0, longTrim: Double = 15.0,
+    offer: (NativeReading, Long) -> Unit,
+) {
+    repeat(11) { index ->
+        val at = start + index * 3_000L
+        for ((n, entry) in listOf(5 to coolantCelsius, 12 to rpm, 13 to speed, 4 to load).withIndex())
+            offer(NativeReading(entry.first, DecodedReading.Scalar(entry.second)), at + n)
+        offer(NativeReading(3, DecodedReading.Structured(mapOf("system_1" to FuelCorrectionRecorder.CLOSED,
+            "system_2" to "engine off"))), at + 4)
+        offer(NativeReading(6, DecodedReading.Scalar(shortTrim)), at + 5)
+        offer(NativeReading(7, DecodedReading.Scalar(longTrim)), at + 6)
     }
+}
+
+class GuidedDiagnosisArchiveTest {
     private fun record() = DiagnosisRecord(UUID.randomUUID().toString(), 1_000_000, 1_000_000,
         DiagnosisStatus.COMPLETED, listOf(DiagnosisSegment(UUID.randomUUID().toString(), 7, "7E8", 1_000_000,
-            0, endedAtOffsetMillis = 40_000, guidance = proof())), guidedPolicyVersion = 1)
+            0, endedAtOffsetMillis = 40_000, guidance = syntheticGuidedProgress())), guidedPolicyVersion = 1)
 
     @Test fun newProofRoundTripsAndLegacyMetadataRemainsUnqualifiedAndUnchanged() {
         val r = record()
@@ -37,7 +46,7 @@ class GuidedDiagnosisArchiveTest {
     }
 
     @Test fun rejectsInvalidPolicyColdProofReusedReceiptsAndInconsistentMilestones() {
-        val p = proof()
+        val p = syntheticGuidedProgress()
         assertFails { GuidedDiagnosisArchive.encode(p.copy(policyVersion = 2)) }
         assertFails { GuidedDiagnosisArchive.encode(p.copy(initialAssessmentOffsetMillis = 1)) }
         assertFails { GuidedDiagnosisArchive.encode(p.copy(scanSucceeded = false)) }
